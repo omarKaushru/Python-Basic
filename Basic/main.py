@@ -138,7 +138,7 @@ print(placeVisited)
 
 placeVisited.sort(key=str.lower, reverse=True)
 print(placeVisited)
-"""
+
 
 fav_food = []
 
@@ -154,3 +154,14 @@ if len(fav_food) != 0:
     print('The Lists are')
     for i in range(len(fav_food)):
         print(fav_food[i])
+"""
+# the in and not in keywords
+
+my_tech = ['apple', 'dell', 'acer laptop', 'ASUS laptop']
+
+print('Enter a tech name: ')
+name = input()
+if name not in my_tech:
+    print('Its not in the list')
+else:
+    print(name + ' is my Tech')
