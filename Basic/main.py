@@ -154,7 +154,7 @@ if len(fav_food) != 0:
     print('The Lists are')
     for i in range(len(fav_food)):
         print(fav_food[i])
-"""
+
 # the in and not in keywords
 
 my_tech = ['apple', 'dell', 'acer laptop', 'ASUS laptop']
@@ -165,3 +165,40 @@ if name not in my_tech:
     print('Its not in the list')
 else:
     print(name + ' is my Tech')
+
+# assuming multiple value at once
+chocolate_milk_shake = ['chocolate', 'milk', 'ice cream', 'blender']
+x, y, z, q = chocolate_milk_shake
+print(x, q)
+
+# Tuples and references
+# tuples example
+
+tup = (1, 2, 3, 'Omar', 'Rubel')
+# print(type(tup))
+# print(tup[3])print(tup[:3])
+# print(len(tup))
+# converting tuple into list
+newList = list(tup)
+print(newList)
+print(type(newList))
+
+# converting list into tuple
+t = tuple(newList)
+print(t)
+
+# Example of References
+# a = [1, 2, 3]
+# b = a
+# b[1] = ['omar']
+# print(a)  # [1, ['omar'], 3] data in a will change
+# to avoid such trouble we have to capy the list into a new list as follow
+"""
+import copy as cp
+
+a = [1, 2, 3]
+x = cp.copy(a)
+
+x = x + [2]
+print(a)
+print(x)
