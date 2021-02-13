@@ -193,12 +193,13 @@ print(t)
 # b[1] = ['omar']
 # print(a)  # [1, ['omar'], 3] data in a will change
 # to avoid such trouble we have to capy the list into a new list as follow
-"""
+
 import copy as cp
 
 a = [1, 2, 3]
 x = cp.copy(a)
 
 x = x + [2]
-print(a)
+print(a[-1])
 print(x)
+"""
