@@ -20,7 +20,7 @@ f = open('a.text', 'r+')
 info = f.read(8)
 print(info)
 f.close()
-"""
+
 # CSV File manipulation
 import csv
 file = open('Machine.csv')
@@ -30,3 +30,12 @@ file_reader = csv.reader(file)
 # print(len(data))
 for row in file_reader:
     print('Row No: ' + str(file_reader.line_num)+' ' + str(row))
+
+import csv
+output_file = open('Machine.csv', 'w')
+output_writer = csv.writer(output_file)
+output_writer.writerow(['1', '2', '3', '4', '5'])
+output_writer.writerow(['11', '22', '33', '44', '55'])
+"""
+f = open('a.txt','w+')
+f.write('This is an extra line')
