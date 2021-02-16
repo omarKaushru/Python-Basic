@@ -21,3 +21,12 @@ info = f.read(8)
 print(info)
 f.close()
 """
+# CSV File manipulation
+import csv
+file = open('Machine.csv')
+file_reader = csv.reader(file)
+# data = list(file_reader)
+# print(data[1])
+# print(len(data))
+for row in file_reader:
+    print('Row No: ' + str(file_reader.line_num)+' ' + str(row))
