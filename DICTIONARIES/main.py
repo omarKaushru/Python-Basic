@@ -1,16 +1,45 @@
-# This is a sample Python script.
+# DICTIONARIES
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+# print(thisdict)
+# Print the "brand" value of the dictionary:
+# print(thisdict["brand"])
 
+# Duplicates Not Allowed Dictionaries cannot have two items with the same key:
+# Duplicate values will overwrite existing values:
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+# print(thisdict)
 
+# Dictionary Length
+# print(len(thisdict))
+# Dictionary Items - Data Types
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+print(thisdict["colors"])
+print(type(thisdict))
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# concatenating two dictionaries
+A = {'a': 100,
+     'b': 200,
+     'c': 300}
+B = {'x': 400,
+     'y': 500,
+     'z': 600}
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+new_dic = A.copy()
+new_dic.update(B)
+print(new_dic)
