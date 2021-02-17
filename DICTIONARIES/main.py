@@ -1,5 +1,5 @@
+""""
 # DICTIONARIES
-
 thisdict = {
   "brand": "Ford",
   "model": "Mustang",
@@ -43,3 +43,5 @@ B = {'x': 400,
 new_dic = A.copy()
 new_dic.update(B)
 print(new_dic)
+"""
+
