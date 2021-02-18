@@ -97,7 +97,7 @@ x = car.setdefault("model", "Bronco")
 
 print(x)
 
-"""
+
 # This program calculate the character frequencies in a text
 import pprint as pp
 text = 'A quick brown jumps over the lazy dog. This is a sample text to TEST the code.'
@@ -110,3 +110,22 @@ for i in text:
 # print(letters)
 # print the frequencies in alphabetical order
 pp.pprint(letters)
+
+# This program calculate the word frequencies in a text
+import pprint as pp
+
+text = 'A quick brown brown over jumps over the lazy dog. This is a sample text to TEST the code.This is a sample text to TEST the code.'
+
+words = text.split()
+#print(word)
+
+counts = dict()
+
+for word in words:
+  if word in counts:
+    counts[word] += 1
+  else:
+    counts[word] = 1
+
+pp.pprint(counts)
+"""
