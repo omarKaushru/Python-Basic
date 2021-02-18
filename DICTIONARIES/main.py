@@ -57,7 +57,7 @@ for i in omar.keys():
 for i in omar.items():
     print(i)
 
-"""
+
 # Separating keys and values into the list for the dictionary
 # x = list(omar.keys())
 # y = list(omar.values())
@@ -74,5 +74,39 @@ for i in omar.items():
 # print('Age' in omar.keys())
 
 # the get() method
-print(str(omar.get('Name', 'DEFAULT')))
-print(str(omar.get('Age', 'DEFAULT')))
+# print(str(omar.get('Name', 'DEFAULT')))
+# print(str(omar.get('Age', 'DEFAULT')))
+# the setdefault() method
+# The setdefault() method returns the value of the item with the specified key.
+# If the key does not exist, insert the key, with the specified value
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.setdefault("color", "White")
+
+print(x)
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.setdefault("model", "Bronco")
+
+print(x)
+
+"""
+# This program calculate the character frequencies in a text
+import pprint as pp
+text = 'A quick brown jumps over the lazy dog. This is a sample text to TEST the code.'
+letters = {}
+for i in text:
+  letters.setdefault(i, 0)
+  letters[i] = letters[i] + 1
+  # letters[h] = letters[h] + 1
+
+# print(letters)
+# print the frequencies in alphabetical order
+pp.pprint(letters)
