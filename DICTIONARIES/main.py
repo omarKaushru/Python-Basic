@@ -119,7 +119,7 @@ text = 'A quick brown brown over jumps over the lazy dog. This is a sample text 
 words = text.split()
 #print(word)
 
-counts = dict()
+counts = dict() # or counts = {}
 
 for word in words:
   if word in counts:
