@@ -45,7 +45,7 @@ new_dic.update(B)
 print(new_dic)
 """
 # Dictionary Methods
-omar = {'Name': 'Md Omar Kaushru','Phone': '01712-166516', 'Job': 'Software Engineer'}
+# omar = {'Name': 'Md Omar Kaushru', 'Phone': '01712-166516', 'Job': 'Software Engineer'}
 """
 # printing values
 for i in omar.values():
@@ -128,4 +128,28 @@ for word in words:
     counts[word] = 1
 
 pp.pprint(counts)
+
+# this program to check the password
+password_bank = {'Omar': 1243, 'Ruble': 7854238, 'Fahim': 923342}
+matched = False
+x = 0  # loop control variable
+
+while x < 5:
+    print('Enter your name:')
+    name = input()
+    if name in password_bank:
+        for i in range(0, 3):
+            print('Enter your password')
+            password = input()
+            if int(password) in password_bank.values():
+                matched = True
+                print('Access Granted')
+                break
+            else:
+                print('Wrong Password. Enter Again' + 'You have ' + str(2 - i) + ' tries left')
+    else:
+        print('There is no such name in the password bank Try again?')
+    x = x + 1
+    if matched:
+        break
 """
