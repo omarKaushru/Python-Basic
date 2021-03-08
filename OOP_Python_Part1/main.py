@@ -24,3 +24,4 @@ print('I am {1} and I am very {0}.'.format(name, 'bad'))
 food = 'Beep'
 language = 'Python'
 print(f'I am {name} and I eat {food}. I don\'t believe in {language} haters.\nAnd {2**2} == {4}.')
+
