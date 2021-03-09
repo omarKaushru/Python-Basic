@@ -1,3 +1,4 @@
+"""
 class StoryBook:
     # Class Variables
     number_of_books = 0
@@ -39,4 +40,4 @@ print(book_1.price)
 book_1.discount = 0.20
 book_1.book_discount()
 print(book_1.price)
-
+"""
