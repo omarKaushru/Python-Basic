@@ -1,3 +1,4 @@
+""""
 def outer(message):
     print('In the outer function')
 
@@ -22,7 +23,7 @@ def f():
     g()
 
 
-f()
+# f()
 
 
 def temperature(t):
@@ -33,7 +34,9 @@ def temperature(t):
     return result
 
 
-print(temperature(20))
+# print(temperature(20))
+
+"""
 
 
 def decorator(original_func):
@@ -45,4 +48,40 @@ def decorator(original_func):
         if 5 > 3:
             print('It is true')
 
-        return original_func() + 'Extra String'
+        return original_func()
+
+    return wrapper
+
+
+def decorator_2(original_func):
+    print('I am the decorator_2 function')
+
+    def wrapper(*args, **kwargs):
+        print(f'Wrapper executed before {original_func.__name__}()')
+
+        if 5 > 3:
+            print('It is true')
+
+        return original_func(*args, **kwargs)
+
+    return wrapper
+
+
+# @decorator
+def print_something():
+    print('Print_something is being ran!')
+
+
+# print_something()
+
+
+@decorator_2
+def print_something_more(arg1, arg2):
+    print(f'Printing Argument_1 = {arg1} and Argument_2 = {arg2}')
+
+
+print_something_more(123, 2345)
+
+# using decorator in one way
+# decorator_f = decorator(print_something)
+# decorator_f()
