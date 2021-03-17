@@ -55,4 +55,14 @@ hBot.clean()
 hBot.halt()
 # print(help(Robot))
 
-print(help(HouseBot))
+# print(help(HouseBot))
+
+# print(issubclass(HouseBot, Robot))
+# print(issubclass(Robot, HouseBot))
+# print(issubclass(Robot, object))
+#
+
+print(isinstance(hBot, Robot))
+print(isinstance(hBot, HouseBot))
+print(isinstance(hBot, object))
+print(isinstance(Robot, object))
