@@ -53,3 +53,6 @@ hBot.move_backward()
 # schoolBot.move_right()
 hBot.clean()
 hBot.halt()
+# print(help(Robot))
+
+print(help(HouseBot))
