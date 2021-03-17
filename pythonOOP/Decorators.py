@@ -36,7 +36,7 @@ def temperature(t):
 
 # print(temperature(20))
 
-"""
+
 
 
 def decorator(original_func):
@@ -85,3 +85,4 @@ print_something_more(123, 2345)
 # using decorator in one way
 # decorator_f = decorator(print_something)
 # decorator_f()
+"""
