@@ -69,7 +69,7 @@ print(isinstance(hBot, Robot))
 print(isinstance(hBot, HouseBot))
 print(isinstance(hBot, object))
 print(isinstance(Robot, object))
-"""
+
 
 
 # Python Multiple Inheritance
@@ -115,3 +115,60 @@ print(s.genre)
 print(s.painting_material)
 print(s.sport)
 s.sing()
+"""
+
+
+# Python Composition
+
+class StoryBook:
+    # Class Variables
+    number_of_books = 0
+    discount = 0.05
+
+    def __init__(self, name, price, author_name, author_born, number_of_pages):
+        self.name = name
+        self.price = price
+        self.author_name = author_name
+        self.author_born = author_born
+        self.number_of_pages = number_of_pages
+        self.publishing_year = 2022
+        StoryBook.number_of_books += 1
+
+    def get_book_info(self):
+        print(f'The book name: {self.name}, Price: {self.price}, Pages: {self.number_of_pages} ')
+
+    def get_author_info(self):
+        print(f'Author Name: {self.author_name}, Born: {self.author_born}')
+
+    def apply_discount(self):
+        self.price = self.price - self.price * self.discount
+
+
+class Library:
+    def __init__(self, book_list=None):
+        if book_list is None:
+            self.book_list = []
+        else:
+            self.book_list = book_list
+
+    def get_all_book(self):
+        for book in self.book_list:
+            print(f'Title: {book.name}, Author: {book.author_name}, Price: {book.price}')
+
+    def add_book(self, book):
+        self.book_list.append(book)
+
+    def remove_book(self, book):
+        self.book_list.remove(book)
+
+
+# creating an instance/object of the StoryBook Class
+book_1 = StoryBook('Hamlet', 400, 'Shakespeare', 1564, 500)
+book_2 = StoryBook('The Kite Runner', 500, 'Khaled Hosseini', 1980, 371)
+
+public_library = Library()
+public_library.add_book(book_1)
+public_library.add_book(book_2)
+public_library.get_all_book()
+public_library.remove_book(book_2)
+public_library.get_all_book()
