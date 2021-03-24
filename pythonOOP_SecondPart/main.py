@@ -115,7 +115,6 @@ print(s.genre)
 print(s.painting_material)
 print(s.sport)
 s.sing()
-"""
 
 
 # Python Composition
@@ -165,10 +164,38 @@ class Library:
 # creating an instance/object of the StoryBook Class
 book_1 = StoryBook('Hamlet', 400, 'Shakespeare', 1564, 500)
 book_2 = StoryBook('The Kite Runner', 500, 'Khaled Hosseini', 1980, 371)
+book_3 = StoryBook('The Dark Side of mine', 700, 'Md Omar Kaushru', 1994, 1213)
 
 public_library = Library()
 public_library.add_book(book_1)
 public_library.add_book(book_2)
+public_library.add_book(book_3)
+
 public_library.get_all_book()
 public_library.remove_book(book_2)
 public_library.get_all_book()
+"""
+
+
+# Python Magic Method
+
+
+class Point2d:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return f'Point2D ({self.x, self.y})'
+
+    def __str__(self):
+        return f'Class: Pint2D, ' \
+               f'X: {self.x} ' \
+               f'Y: {self.y}'
+
+
+p1 = Point2d(12, 13)
+p2 = Point2d(13, 14)
+
+print(p1)
+print(p2)
