@@ -1,4 +1,3 @@
-
 class Robot:
     def __init__(self, name, version):
         self.name = name
@@ -55,7 +54,6 @@ hBot.move_backward()
 hBot.clean()
 hBot.halt()
 
-
 print(help(Robot))
 
 print(help(HouseBot))
@@ -64,12 +62,10 @@ print(issubclass(HouseBot, Robot))
 print(issubclass(Robot, HouseBot))
 print(issubclass(Robot, object))
 
-
 print(isinstance(hBot, Robot))
 print(isinstance(hBot, HouseBot))
 print(isinstance(hBot, object))
 print(isinstance(Robot, object))
-
 
 
 # Python Multiple Inheritance
@@ -176,49 +172,76 @@ public_library.remove_book(book_2)
 public_library.get_all_book()
 
 
-
 # Python Magic Method
 
-
-class Point2d:
+class Point2D:
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
     def __repr__(self):
-        return f'Point2D ({self.x, self.y})'
+        return f'Point2D({self.x, self.y})'
 
     def __str__(self):
-        return f'Class: Pint2D, ' \
-               f'X: {self.x} ' \
-               f'Y: {self.y}'
+        return f'Class: Point2D, ' \
+               f' x: {self.x}, y: {self.y}'
 
     def __add__(self, other):
         if isinstance(self, other.__class__):
-            return Point2d(self.x + other.x, self.y + other.y)
+            return Point2D(self.x + other.x, self.y + other.y)
         else:
             return None
 
     def __sub__(self, other):
         if isinstance(self, other.__class__):
-            return Point2d(self.x - other.x, self.y - other.y)
+            return Point2D(self.x - other.x, self.y - other.y)
         else:
             return None
 
     def __eq__(self, other):
-        if isinstance(self,other.__class__):
+        if isinstance(self, other.__class__):
             return self.x == other.x and self.y == other.y
 
+    def __ne__(self, other):
+        if isinstance(self, other.__class__):
+            return self.x != other.x or self.y != other.y
 
-p1 = Point2d(12, 13)
-p2 = Point2d(13, 14)
+    def __lt__(self, other):
+        if isinstance(self, other.__class__):
+            return self.x < other.x or (self.x == other.x and self.y < other.y)
+
+    def __hash__(self):
+        return hash(self.x + self.y)
+
+
+p1 = Point2D(1, 2)
+p2 = Point2D(2, 3)
+p6 = Point2D(1, 2)
+
 # print(p1)
-# print(p2)
+#
+# print(repr(p1))
+# print(str(p1))
 
 p3 = p1 + p2
-# print(p3)
 p4 = p1 - p2
+# print(p3)
 # print(p4)
 
-print(p1 == p2)
-print(p1 is p2)
+# print(p1 == p6)
+# print(p1 is p6)
+
+# print(p1 != p2)
+# print(p1 != p6)
+
+# print(p1 < p2)
+# print(p1 < p6)
+
+point_set = set()
+point_dict = dict()
+
+point_set.add(p1)
+
+point_dict[p1] = str(p1)
+
+print(point_dict)
