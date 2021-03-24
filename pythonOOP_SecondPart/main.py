@@ -1,4 +1,4 @@
-"""
+
 class Robot:
     def __init__(self, name, version):
         self.name = name
@@ -174,7 +174,7 @@ public_library.add_book(book_3)
 public_library.get_all_book()
 public_library.remove_book(book_2)
 public_library.get_all_book()
-"""
+
 
 
 # Python Magic Method
@@ -193,9 +193,32 @@ class Point2d:
                f'X: {self.x} ' \
                f'Y: {self.y}'
 
+    def __add__(self, other):
+        if isinstance(self, other.__class__):
+            return Point2d(self.x + other.x, self.y + other.y)
+        else:
+            return None
+
+    def __sub__(self, other):
+        if isinstance(self, other.__class__):
+            return Point2d(self.x - other.x, self.y - other.y)
+        else:
+            return None
+
+    def __eq__(self, other):
+        if isinstance(self,other.__class__):
+            return self.x == other.x and self.y == other.y
+
 
 p1 = Point2d(12, 13)
 p2 = Point2d(13, 14)
+# print(p1)
+# print(p2)
 
-print(p1)
-print(p2)
+p3 = p1 + p2
+# print(p3)
+p4 = p1 - p2
+# print(p4)
+
+print(p1 == p2)
+print(p1 is p2)
